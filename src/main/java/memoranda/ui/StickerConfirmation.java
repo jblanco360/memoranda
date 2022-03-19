@@ -29,7 +29,6 @@ import main.java.memoranda.date.CalendarDate;
 import main.java.memoranda.util.Context;
 import main.java.memoranda.util.Local;
 
-
 public class StickerConfirmation extends JDialog {
         public boolean CANCELLED = true;
         JPanel panel1 = new JPanel();
@@ -42,10 +41,10 @@ public class StickerConfirmation extends JDialog {
         JLabel header = new JLabel();
         JPanel jPanel1 = new JPanel();
         JLabel jLabel1 = new JLabel();
-        
+
         Border border1;
         Border border2;
-        
+
         public StickerConfirmation(Frame frame) {
                 super(frame, Local.getString("Sticker"), true);
                 try {
@@ -59,12 +58,10 @@ public class StickerConfirmation extends JDialog {
         public StickerConfirmation() {
                 this(null);
         }
+
         void jbInit() throws Exception {
-                border1 =
-                        BorderFactory.createCompoundBorder(
-                                BorderFactory.createEtchedBorder(
-                                        Color.white,
-                                        new Color(156, 156, 158)),
+                border1 = BorderFactory.createCompoundBorder(
+                                BorderFactory.createEtchedBorder(Color.white, new Color(156, 156, 158)),
                                 BorderFactory.createEmptyBorder(5, 5, 5, 5));
                 border2 = BorderFactory.createEmptyBorder(5, 0, 5, 0);
                 panel1.setLayout(borderLayout1);
@@ -88,7 +85,7 @@ public class StickerConfirmation extends JDialog {
                         }
                 });
                 this.getRootPane().setDefaultButton(okButton);
-                
+
                 bottomPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
                 topPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
                 topPanel.setBorder(new EmptyBorder(new Insets(0, 5, 0, 5)));
@@ -97,9 +94,8 @@ public class StickerConfirmation extends JDialog {
                 header.setFont(new java.awt.Font("Dialog", 0, 20));
                 header.setForeground(new Color(0, 0, 124));
                 header.setText(Local.getString("Sticker"));
-                header.setIcon(new ImageIcon(main.java.memoranda.ui.StickerDialog.class.getResource(
-            "/ui/icons/sticker48.png")));
-
+                header.setIcon(new ImageIcon(
+                                main.java.memoranda.ui.StickerDialog.class.getResource("/ui/icons/alarm.png")));
 
                 jLabel1.setText(Local.getString("DELETE THIS STICKER?"));
                 panel1.setBorder(border1);
@@ -112,11 +108,9 @@ public class StickerConfirmation extends JDialog {
                 this.getContentPane().add(topPanel, BorderLayout.NORTH);
                 topPanel.add(header);
                 jPanel1.add(jLabel1, BorderLayout.WEST);
-                
+
         }
-        
-        
-        
+
         void cancelButton_actionPerformed(ActionEvent e) {
                 this.dispose();
         }
@@ -126,5 +120,4 @@ public class StickerConfirmation extends JDialog {
                 this.dispose();
         }
 
-        
 }
